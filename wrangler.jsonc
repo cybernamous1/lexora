@@ -12,7 +12,7 @@
     {
       "binding": "DB",
       "database_name": "lexora-db",
-      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "database_id": "c0257918-71f4-4c1c-a979-b0367239713d",
       "migrations_dir": "migrations"
     }
   ],
