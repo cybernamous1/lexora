@@ -16,7 +16,7 @@
     "mammoth": "^1.9.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20261125.0",
+    "@cloudflare/workers-types": "^4.20250924.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "wrangler": "^4.45.0"
