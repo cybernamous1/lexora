@@ -1,8 +1,22 @@
 import { ENGINE_VERSION, RULE_IDS, ruleCategory } from "../engine/rules.ts";
 
+// Minimal local binding types so the build doesn't depend on global Cloudflare
+// types (which clash with the DOM lib used by the front-end code).
+interface D1StatementLike {
+  bind(...values: unknown[]): D1StatementLike;
+  all<T = Record<string, unknown>>(): Promise<{ results?: T[] }>;
+  run(): Promise<unknown>;
+}
+interface D1Like {
+  prepare(query: string): D1StatementLike;
+}
+interface FetcherLike {
+  fetch(request: Request): Promise<Response>;
+}
+
 interface Env {
-  ASSETS: Fetcher;
-  DB?: D1Database;
+  ASSETS: FetcherLike;
+  DB?: D1Like;
 }
 
 const JSON_HEADERS = { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" };
